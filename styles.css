@@ -1,9 +1,7 @@
-/* Smooth Scrolling Behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Global Variables for Colors */
 :root {
   --bg: #1e1e1e;
   --panel: #2b2b2b;
@@ -13,14 +11,12 @@ html {
   --border: #333;
 }
 
-/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base body styles */
 body {
   font-family: 'Roboto', sans-serif;
   display: grid;
@@ -30,7 +26,6 @@ body {
   color: var(--text);
 }
 
-/* Sidebar styling */
 nav {
   background-color: #212121;
   padding: 20px;
@@ -66,7 +61,6 @@ nav a:hover {
   color: var(--highlight);
 }
 
-/* Glow toggle styling */
 .glow-toggle {
   margin-top: 20px;
   display: flex;
@@ -76,7 +70,6 @@ nav a:hover {
   color: var(--text);
 }
 
-/* Style for the custom checkbox */
 .glow-toggle input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -90,7 +83,6 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 
-/* Create the toggle circle */
 .glow-toggle input[type="checkbox"]::before {
   content: '';
   position: absolute;
@@ -103,23 +95,19 @@ nav a:hover {
   transition: transform 0.3s ease;
 }
 
-/* Change the background when checked */
 .glow-toggle input[type="checkbox"]:checked {
-  background-color: #ffeb3b; /* Yellow */
+  background-color: #ffeb3b;
 }
 
-/* Move the circle to the right when checked */
 .glow-toggle input[type="checkbox"]:checked::before {
   transform: translateX(26px);
 }
 
-/* Main content styling */
 main {
   padding: 20px;
   overflow-y: auto;
 }
 
-/* Section and table grid */
 h1 {
   color: var(--accent);
   margin-bottom: 10px;
@@ -158,7 +146,6 @@ tr:nth-child(even) {
   background-color: #3a3a3a;
 }
 
-/* Glow Effect */
 .table-container.glow-blue {
   animation: glowBlue 2s forwards;
 }
