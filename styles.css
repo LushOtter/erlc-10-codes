@@ -1,0 +1,186 @@
+/* Smooth Scrolling Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Variables for Colors */
+:root {
+  --bg: #1e1e1e;
+  --panel: #2b2b2b;
+  --text: #f1f1f1;
+  --accent: #00bcd4;
+  --highlight: #ffeb3b;
+  --border: #333;
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Sidebar styling */
+nav {
+  background-color: #212121;
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+nav .sidebar-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+nav li {
+  margin-bottom: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--highlight);
+}
+
+/* Glow toggle styling */
+.glow-toggle {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Style for the custom checkbox */
+.glow-toggle input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  background-color: #b0bec5;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Create the toggle circle */
+.glow-toggle input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Change the background when checked */
+.glow-toggle input[type="checkbox"]:checked {
+  background-color: #ffeb3b; /* Yellow */
+}
+
+/* Move the circle to the right when checked */
+.glow-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(26px);
+}
+
+/* Main content styling */
+main {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Section and table grid */
+h1 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.table-container {
+  background-color: var(--panel);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--accent);
+}
+
+tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+
+/* Glow Effect */
+.table-container.glow-blue {
+  animation: glowBlue 2s forwards;
+}
+
+.table-container.glow-yellow {
+  animation: glowYellow 2s forwards;
+}
+
+@keyframes glowBlue {
+  0% {
+      box-shadow: 0 0 10px 0px #00bcd4;
+  }
+  100% {
+      box-shadow: 0 0 25px 10px #ff0000;
+  }
+}
+
+@keyframes glowYellow {
+  0% {
+      box-shadow: 0 0 10px 0px yellow;
+  }
+  100% {
+      box-shadow: 0 0 25px 10px yellow;
+  }
+}
